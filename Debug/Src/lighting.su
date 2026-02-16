@@ -1,0 +1,7 @@
+../Src/lighting.c:30:6:lighting_init	8	static
+../Src/lighting.c:36:6:lighting_set_color	16	static
+../Src/lighting.c:43:6:lighting_set_brightness	16	static
+../Src/lighting.c:47:6:lighting_update	8	static
+../Src/lighting.c:52:6:lighting_fade_update	16	static
+../Src/lighting.c:75:9:lighting_is_fading	4	static
+../Src/lighting.c:80:6:lighting_fade_to	32	static

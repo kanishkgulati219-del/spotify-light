@@ -1,0 +1,7 @@
+../Src/pwm.c:19:20:ch1_config	1
+../Src/pwm.c:28:20:ch2_config	1
+../Src/pwm.c:37:20:ch3_config	1
+../Src/pwm.c:46:20:ccm_config	1
+../Src/pwm.c:63:6:pwm_init	1
+../Src/pwm.c:84:6:pwm_update	1
+../Src/pwm.c:88:6:pwm_set_duty	5

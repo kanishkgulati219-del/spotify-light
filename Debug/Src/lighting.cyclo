@@ -1,0 +1,7 @@
+../Src/lighting.c:30:6:lighting_init	1
+../Src/lighting.c:36:6:lighting_set_color	1
+../Src/lighting.c:43:6:lighting_set_brightness	1
+../Src/lighting.c:47:6:lighting_update	1
+../Src/lighting.c:52:6:lighting_fade_update	3
+../Src/lighting.c:75:9:lighting_is_fading	1
+../Src/lighting.c:80:6:lighting_fade_to	1

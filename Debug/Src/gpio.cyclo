@@ -1,0 +1,8 @@
+../Src/gpio.c:26:6:gpio_init	1
+../Src/gpio.c:40:6:gpio_debug_led_toggle	1
+../Src/gpio.c:45:13:gpio_debug_led_init	1
+../Src/gpio.c:55:13:gpio_uart1_init	1
+../Src/gpio.c:72:20:tim3_ch1_init	1
+../Src/gpio.c:88:20:tim3_ch2_init	1
+../Src/gpio.c:103:20:tim3_ch3_init	1
+../Src/gpio.c:120:13:gpio_tim3_init	1

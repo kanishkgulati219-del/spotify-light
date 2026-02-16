@@ -1,0 +1,3 @@
+../Src/led_pwm.c:11:6:led_set_color	16	static
+../Src/led_pwm.c:18:6:led_set_brightness	16	static
+../Src/led_pwm.c:22:6:led_update	8	static
