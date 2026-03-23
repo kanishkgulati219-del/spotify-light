@@ -1,0 +1,14 @@
+../Src/lighting/lighting_modes.c:32:13:set_timer_callback	1
+../Src/lighting/lighting_modes.c:36:12:hsv_to_rgb	10
+../Src/lighting/lighting_modes.c:97:6:lighting_init	1
+../Src/lighting/lighting_modes.c:106:13:lighting_set_color	1
+../Src/lighting/lighting_modes.c:112:6:static_rgb_fade_update	3
+../Src/lighting/lighting_modes.c:135:6:lighting_set_rgb	3
+../Src/lighting/lighting_modes.c:158:6:rainbow_fade_update	2
+../Src/lighting/lighting_modes.c:171:6:lighting_start_rainbow	1
+../Src/lighting/lighting_modes.c:181:6:color_loop_fade_update	6
+../Src/lighting/lighting_modes.c:230:6:lighting_start_color_loop	4
+../Src/lighting/lighting_modes.c:258:6:lighting_is_fading	1
+../Src/lighting/lighting_modes.c:262:6:timer_stop	1
+../Src/lighting/lighting_modes.c:266:5:get_color_status	1
+../Src/lighting/lighting_modes.c:270:6:update_timer_callback	5

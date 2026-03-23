@@ -5,38 +5,29 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Src/debug.c \
-../Src/event_queue.c \
-../Src/main.c \
-../Src/parser.c \
-../Src/syscalls.c \
-../Src/sysmem.c 
+../Src/lighting/led_pwm.c \
+../Src/lighting/lighting_engine.c \
+../Src/lighting/lighting_modes.c 
 
 OBJS += \
-./Src/debug.o \
-./Src/event_queue.o \
-./Src/main.o \
-./Src/parser.o \
-./Src/syscalls.o \
-./Src/sysmem.o 
+./Src/lighting/led_pwm.o \
+./Src/lighting/lighting_engine.o \
+./Src/lighting/lighting_modes.o 
 
 C_DEPS += \
-./Src/debug.d \
-./Src/event_queue.d \
-./Src/main.d \
-./Src/parser.d \
-./Src/syscalls.d \
-./Src/sysmem.d 
+./Src/lighting/led_pwm.d \
+./Src/lighting/lighting_engine.d \
+./Src/lighting/lighting_modes.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
+Src/lighting/%.o Src/lighting/%.su Src/lighting/%.cyclo: ../Src/lighting/%.c Src/lighting/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VETx -c -I../Inc -I/Users/kanishkgulati/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Drivers/CMSIS/Core/Include -I/Users/kanishkgulati/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
-clean: clean-Src
+clean: clean-Src-2f-lighting
 
-clean-Src:
-	-$(RM) ./Src/debug.cyclo ./Src/debug.d ./Src/debug.o ./Src/debug.su ./Src/event_queue.cyclo ./Src/event_queue.d ./Src/event_queue.o ./Src/event_queue.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/parser.cyclo ./Src/parser.d ./Src/parser.o ./Src/parser.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+clean-Src-2f-lighting:
+	-$(RM) ./Src/lighting/led_pwm.cyclo ./Src/lighting/led_pwm.d ./Src/lighting/led_pwm.o ./Src/lighting/led_pwm.su ./Src/lighting/lighting_engine.cyclo ./Src/lighting/lighting_engine.d ./Src/lighting/lighting_engine.o ./Src/lighting/lighting_engine.su ./Src/lighting/lighting_modes.cyclo ./Src/lighting/lighting_modes.d ./Src/lighting/lighting_modes.o ./Src/lighting/lighting_modes.su
 
-.PHONY: clean-Src
+.PHONY: clean-Src-2f-lighting
 

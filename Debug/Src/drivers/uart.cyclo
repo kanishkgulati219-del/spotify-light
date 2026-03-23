@@ -1,0 +1,6 @@
+/Users/kanishkgulati/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Drivers/CMSIS/Core/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	2
+../Src/drivers/uart.c:22:6:USART1_IRQHandler	8
+../Src/drivers/uart.c:52:6:uart1_init	1
+../Src/drivers/uart.c:73:13:uart1_writeHex	2
+../Src/drivers/uart.c:79:6:uart1sendBuffer	2
+../Src/drivers/uart.c:85:9:get_frame_length	1

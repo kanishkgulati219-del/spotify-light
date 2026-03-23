@@ -1,0 +1,5 @@
+/Users/kanishkgulati/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Drivers/CMSIS/Core/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	2
+../Src/drivers/timer.c:22:6:TIM4_IRQHandler	2
+../Src/drivers/timer.c:31:6:tim4_init	1
+../Src/drivers/timer.c:51:6:tim4_start	1
+../Src/drivers/timer.c:55:6:tim4_stop	1

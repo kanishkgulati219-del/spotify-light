@@ -1,0 +1,5 @@
+../Src/parser.c:22:6:protocol_init	16	static
+../Src/parser.c:30:6:protocol_process_frame	32	static
+../Src/parser.c:59:13:protocol_parse_frame	24	static
+../Src/parser.c:84:16:protocol_compute_crc	24	static
+../Src/parser.c:93:13:protocol_extract_params	32	static

@@ -13,10 +13,17 @@
 #include <stdint.h>
 
 // Custom Includes
-#include <gpio.h>
-#include <uart.h>
-#include <pwm.h>
-#include <lighting.h>
+#include <drivers/gpio.h>
+#include <drivers/uart.h>
+#include <drivers/pwm.h>
+#include <drivers/timer.h>
+#include <event_queue.h>
+#include <parser.h>
+#include <lighting/lighting_engine.h>
+#include <lighting/lighting_modes.h>
+
+// Turn on FPU Co-Processor
+static uint32_t volatile *const CPAC_reg = (uint32_t volatile*)0xE000ED88;				// Coprocessor access control register
 
 // RCC stands for reset and clock control
 static uint32_t volatile *const rccCR_reg = (uint32_t volatile*)0x40023800;				// RCC Clock Control Register
@@ -27,6 +34,8 @@ static uint32_t volatile *const flashAC_reg = (uint32_t volatile*)0x40023C00;			
 
 int main(void)
 {
+
+	*CPAC_reg |=(3 << 20) | (3 << 22);		// Enable full access
 
 	/* Enable and wait for HSI to start to select it as a valid PLL source*/
 	*rccCR_reg |=(1 << 0);	// Enable HSI
@@ -55,27 +64,33 @@ int main(void)
 	// Wait for SYSCLK switch status to confirm PLL as the source
 	while(((*rccCFG_reg >> 2) & 0x3) != 2);	// 2 confirms PLL as the source
 
+	// drivers init
 	gpio_init();
-
 	uart1_init();
-	pwm_init();			// initalise the LED PWM
+	pwm_init();			// initialise the LED PWM
 
-	lighting_init();
-	lighting_set_color(999,999,999);
-	lighting_update();
-
-	for(int i=0; i< 10000000; i++);
-
-	//lighting_fade_to(0,999,0, 9990);
-
-	//for(int i=0; i< 10000000; i++);
-
-	lighting_fade_to(999,0,0, 9990);
+	// architecture init
+	protocol_init();
+	lighting_engine_init();
 
 	while(1){
-		gpio_debug_led_toggle();
-		//uart1_writeChar('a');
-		for(int i=0; i< 1000000; i++);
+		if(command_recv){
+			command_recv = false;
+			uint8_t frame_length = get_frame_length();
+			protocol_process_frame(recvCommand, frame_length);
+
+		}
+		while(!event_queue_empty()){
+			light_command_t cmd;
+			event_queue_pop(&cmd);
+			event_dispatcher(cmd);
+			//gpio_debug_led_toggle();	// debug
+		}
+
+		if(call_update_function){
+			call_update_function = false;
+			update_callback();
+		}
 	}
 
 }

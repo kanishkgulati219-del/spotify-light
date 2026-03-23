@@ -1,0 +1,8 @@
+../Src/drivers/gpio.c:26:6:gpio_init	1
+../Src/drivers/gpio.c:42:6:gpio_debug_led_toggle	1
+../Src/drivers/gpio.c:47:13:gpio_debug_led_init	1
+../Src/drivers/gpio.c:56:13:gpio_uart1_init	1
+../Src/drivers/gpio.c:72:20:tim3_ch1_init	1
+../Src/drivers/gpio.c:88:20:tim3_ch2_init	1
+../Src/drivers/gpio.c:103:20:tim3_ch3_init	1
+../Src/drivers/gpio.c:120:13:gpio_tim3_init	1

@@ -1,0 +1,5 @@
+../Src/parser.c:22:6:protocol_init	2
+../Src/parser.c:30:6:protocol_process_frame	3
+../Src/parser.c:59:13:protocol_parse_frame	4
+../Src/parser.c:84:16:protocol_compute_crc	2
+../Src/parser.c:93:13:protocol_extract_params	8

@@ -1,0 +1,7 @@
+../Src/event_queue.c:7:12:getNextIndex	16	static
+../Src/event_queue.c:11:13:isEmpty	16	static
+../Src/event_queue.c:16:13:isFull	16	static
+../Src/event_queue.c:22:6:event_queue_empty	8	static
+../Src/event_queue.c:27:6:event_queue_init	4	static
+../Src/event_queue.c:34:6:event_queue_push	24	static
+../Src/event_queue.c:43:6:event_queue_pop	24	static
